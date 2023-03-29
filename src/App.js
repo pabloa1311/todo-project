@@ -8,7 +8,7 @@ import TodoSearch from "./components/TodoSearch";
 import { useState } from "react";
 
 const deftodos = [
-  {text: "Buscar el hotel", completed: true},
+  {text: "Buscar el hotel", completed: false},
   {text: "Comprar los tiquetes", completed: false},
   {text: "Empacar la maleta", completed: false}
 ]
@@ -62,7 +62,7 @@ function App() {
     const newTodos = [...todos]
 
     newTodos.push({text: searchValue, completed: false})
-    
+
     setTodos(newTodos)
     setSearchValue("")
   }
