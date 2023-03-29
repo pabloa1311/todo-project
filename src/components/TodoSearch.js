@@ -9,7 +9,7 @@ function TodoSearch({searchValue, setSearchValue}) {
     }
   return (
     <>
-    <input className="TodoSearch" placeholder="cebolla"
+    <input className="TodoSearch" placeholder="¿Qué quieres hacer hoy?"
     value={searchValue}
     onChange={onValueChange} />
     </>
