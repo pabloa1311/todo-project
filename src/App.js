@@ -58,6 +58,15 @@ function App() {
     setTodos(newTodos)
   }
 
+  const addTodo = () => {
+    const newTodos = [...todos]
+
+    newTodos.push({text: searchValue, completed: false})
+    
+    setTodos(newTodos)
+    setSearchValue("")
+  }
+
   return (
     <>
       <TodoCounter
@@ -82,7 +91,9 @@ function App() {
             />
         )})}
       </TodoList>
-      <CreateButton />
+      <CreateButton
+        addTodo={addTodo}
+      />
       
     </>
   );

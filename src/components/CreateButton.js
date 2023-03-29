@@ -1,12 +1,10 @@
 import React from "react";
 import "../styles/createButton.css";
 
-function CreateButton() {
-  const clickHandler = () => {
-    alert("Button not ready")
-  };
+function CreateButton(props) {
+  
   return (
-    <button className="CreateTodoButton" onClick={clickHandler}>
+    <button className="CreateTodoButton" onClick={props.addTodo}>
       +
     </button>
   );
