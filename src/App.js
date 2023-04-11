@@ -31,7 +31,7 @@ function App() {
           }) => {
             return (
               <>
-                <TodoCounter total={totalTodos} completed={completedTodos} />
+                <TodoCounter/>
 
                 <TodoSearch
                   searchValue={searchValue}
