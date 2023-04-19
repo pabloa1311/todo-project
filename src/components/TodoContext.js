@@ -14,6 +14,8 @@ function TodoProvider(props) {
 
   const [searchValue, setSearchValue] = useState("");
 
+  const [openModal, setOpenModal] = useState(false)
+
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
 
@@ -48,13 +50,17 @@ function TodoProvider(props) {
     saveTodos(newTodos);
   };
 
-  const addTodo = () => {
+  const onAdd = (text) => {
     const newTodos = [...todos];
 
-    newTodos.push({ text: searchValue, completed: false });
+    newTodos.push({ text, completed: false });
 
     saveTodos(newTodos);
     setSearchValue("");
+  };
+
+  const addTodo = () => {
+    setOpenModal(prevState => !prevState)
   };
 
   return (
@@ -68,7 +74,10 @@ function TodoProvider(props) {
         setSearchValue,
         searchedTodos,
         deleteTodo,
-        addTodo
+        addTodo,
+        openModal,
+        setOpenModal,
+        onAdd
     }}>{props.children}</TodoContext.Provider>
   );
 }
